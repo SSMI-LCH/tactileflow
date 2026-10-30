@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #ebecf0;
+    --surface-extruded: #e6e8ec;
+    --surface-debossed: #e4e6ea;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent-blue: #3b82f6;
+    --accent-blue-dark: #2563eb;
+    --accent-tertiary: #b75b00;
+    --accent-error: #ba1a1a;
+  }
+
+  body {
+    background-color: #ebecf0;
+    color: #1e293b;
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Tactile Neumorphic Elevation & Depth System */
+.neu-canvas {
+  background-color: #ebecf0;
+}
+
+.neu-extruded {
+  background: linear-gradient(145deg, #fbfcfe, #e1e3e8);
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, 1), 6px 6px 14px rgba(184, 190, 201, 0.65);
+}
+
+.neu-extruded-sm {
+  background: linear-gradient(145deg, #fbfcfe, #e1e3e8);
+  box-shadow: -4px -4px 9px rgba(255, 255, 255, 0.95), 4px 4px 9px rgba(184, 190, 201, 0.6);
+}
+
+.neu-debossed {
+  background-color: #e4e6ea;
+  box-shadow: inset 4px 4px 8px rgba(184, 190, 201, 0.65), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.neu-debossed-sm {
+  background-color: #e4e6ea;
+  box-shadow: inset 3px 3px 6px rgba(184, 190, 201, 0.65), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.neu-floating {
+  background: linear-gradient(145deg, #fbfcfe, #e4e6eb);
+  box-shadow: -10px -10px 24px rgba(255, 255, 255, 1), 12px 12px 28px rgba(184, 190, 201, 0.75);
+}
+
+.neu-btn {
+  background: linear-gradient(145deg, #fbfcfe, #e1e3e8);
+  box-shadow: -5px -5px 12px rgba(255, 255, 255, 1), 5px 5px 12px rgba(184, 190, 201, 0.65);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-btn:hover {
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, 1), 6px 6px 16px rgba(184, 190, 201, 0.75);
+}
+
+.neu-btn:active,
+.neu-btn-active {
+  background: #e4e6ea;
+  box-shadow: inset 4px 4px 8px rgba(184, 190, 201, 0.65), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.neu-btn-primary {
+  background: linear-gradient(145deg, #4b8df8, #2f76eb);
+  color: #ffffff;
+  box-shadow: -4px -4px 10px rgba(255, 255, 255, 0.8), 0 8px 20px rgba(59, 130, 246, 0.38);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-btn-primary:hover {
+  background: linear-gradient(145deg, #5694f9, #2563eb);
+  box-shadow: -4px -4px 12px rgba(255, 255, 255, 0.9), 0 10px 24px rgba(59, 130, 246, 0.45);
+}
+
+.neu-btn-primary:active {
+  background: #2563eb;
+  box-shadow: inset 3px 3px 7px rgba(15, 45, 110, 0.45), inset -2px -2px 6px rgba(147, 197, 253, 0.3);
+}
+
+.neu-input {
+  background-color: #e4e6ea;
+  box-shadow: inset 4px 4px 8px rgba(184, 190, 201, 0.65), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  transition: box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-input::placeholder {
+  color: #64748b;
+}
+
+.neu-input:focus {
+  outline: none;
+  box-shadow: inset 5px 5px 10px rgba(184, 190, 201, 0.75), inset -5px -5px 10px rgba(255, 255, 255, 0.95), inset 0 0 0 1.5px #3b82f6;
+}
+
+.neu-divider {
+  height: 2px;
+  background: linear-gradient(to bottom, rgba(184, 190, 201, 0.45), rgba(255, 255, 255, 0.85));
+}
+
+/* Accessibility Focus Ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom Range Scrubber */
+input[type="range"].neu-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"].neu-slider::-webkit-slider-runnable-track {
+  height: 10px;
+  border-radius: 9999px;
+}
+
+input[type="range"].neu-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: linear-gradient(145deg, #ffffff, #dfe2e8);
+  box-shadow: -3px -3px 7px rgba(255, 255, 255, 1), 3px 3px 7px rgba(140, 148, 164, 0.75);
+  border: 2px solid #3b82f6;
+  margin-top: -6px;
+}
